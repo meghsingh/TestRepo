@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e1cb-05fe-8000-29b4-01ef9001ef90_169286</versionUuid>
+    <rule>
+        <name>test_displayGrid</name>
+        <uuid>_a-0000e1be-2cd8-8000-29b4-01ef9001ef90_169267</uuid>
+        <description></description>
+        <parentUuid>_a-0000e07f-a897-8000-29b4-01ef9001ef90_55156</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>load(
+  local!filter: tointeger(
+    null()
+  ),
+  local!childNodes: {},
+  local!paginginfo: #"SYSTEM_SYSRULES_pagingInfo"(
+    1,
+    10
+  ),
+  local!continentCountryStateData: #"_a-0000e1be-2cd8-8000-29b4-01ef9001ef90_169123"(),
+  local!data: #"_a-0000e1be-2cd8-8000-29b4-01ef9001ef90_169030"(
+    continentCountryStateData: local!continentCountryStateData,
+    continent: index(
+      local!continentCountryStateData,
+      local!filter,
+      {}
+    ),
+    childNodes: local!childNodes
+  ),
+  local!datasubset: todatasubset(
+    local!data,
+    local!paginginfo
+  ),
+  {
+    #"SYSTEM_SYSRULES_dropdownField"(
+      label: "id",
+      placeholderLabel: "--select--",
+      choiceLabels: touniformstring(
+        index(
+          local!continentCountryStateData,
+          "name",
+          {}
+        )
+      ),
+      choiceValues: tointeger(
+        index(
+          local!continentCountryStateData,
+          "id",
+          {}
+        )
+      ),
+      value: local!filter,
+      saveInto: {
+        local!filter,
+        a!save(
+          local!data,
+          #"_a-0000e1be-2cd8-8000-29b4-01ef9001ef90_169030"(
+            continentCountryStateData: local!continentCountryStateData,
+            continent: index(
+              local!continentCountryStateData,
+              tointeger(
+                local!filter
+              ),
+              {}
+            ),
+            childNodes: local!childNodes
+          )
+        ),
+        a!save(
+          local!datasubset,
+          todatasubset(
+            local!data,
+            local!paginginfo
+          )
+        )
+      }
+    ),
+    #"SYSTEM_SYSRULES_gridField"(
+      label: "data",
+      totalCount: length(
+        local!data
+      ),
+      value: local!paginginfo,
+      saveInto: {
+        local!paginginfo,
+        a!save(
+          local!data,
+          #"_a-0000e1be-2cd8-8000-29b4-01ef9001ef90_169030"(
+            continentCountryStateData: local!continentCountryStateData,
+            continent: index(
+              local!continentCountryStateData,
+              tointeger(
+                local!filter
+              ),
+              {}
+            ),
+            childNodes: local!childNodes
+          )
+        ),
+        a!save(
+          local!datasubset,
+          todatasubset(
+            local!data,
+            local!paginginfo
+          )
+        )
+      },
+      columns: {
+        /*a!gridTextColumn(
+          label:"id",
+          data: index(
+            local!datasubset,
+            "data",
+            "id",
+            {}
+          )
+        ),*/
+        #"SYSTEM_SYSRULES_gridTextColumn"(
+          label: "Country / State",
+          field: "name",
+          data: index(
+            local!datasubset,
+            "data",
+            "name",
+            {}
+          )
+        )/*,*/
+        /*a!gridTextColumn(
+          label : "Continent",
+          field:"parent",
+          data: a!forEach(
+            items: index(
+            local!datasubset,
+            "data",
+            "parent",
+            {}
+          ),
+          expression: index(
+            local!continentCountryStateData,
+            wherecontains(
+              fv!item,
+              index(local!continentCountryStateData,"id",{})
+            ),
+            "name",
+            null()
+          )
+          )
+        )*/
+        
+      }
+    )
+  }
+)</definition>
+        <metadataExpr></metadataExpr>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e1cb-05fe-8000-29b4-01ef9001ef90_169286"/>
+    </history>
+</contentHaul>
