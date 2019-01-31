@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e1cb-05fe-8000-29b4-01ef9001ef90_169391</versionUuid>
+    <outboundIntegration>
+        <name>test_getDocumentFromAppian</name>
+        <uuid>00a9394c-42d9-4e5b-b5e7-38e63441ec2f</uuid>
+        <description>integeration to get the document from Appian</description>
+        <parentUuid>_a-0000e07f-a897-8000-29b4-01ef9001ef90_55156</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition></definition>
+        <namedTypedValue>
+            <name>documentId</name>
+            <type>
+                <name>double</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <metadataExpr></metadataExpr>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <sharedConfigParameters>
+            <a:Dictionary xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <url xsi:type="a:Expression">"https://appian-world4.persistent.com/suite/webapi/getDocument/"&amp;ri!documentId</url>
+                <isInheritedUrlOptionSelected xsi:type="xsd:boolean">false</isInheritedUrlOptionSelected>
+                <relativePath xsi:type="xsd:string"/>
+                <authType xsi:type="xsd:string">Basic</authType>
+                <authDetails xsi:type="a:OutboundIntegrationAuthBasic">
+                    <a:username xsi:type="a:EncryptedText"/>
+                    <a:password xsi:type="a:EncryptedText"/>
+                    <a:isPreemptive>true</a:isPreemptive>
+                </authDetails>
+            </a:Dictionary>
+        </sharedConfigParameters>
+        <configParameters>
+            <a:Dictionary xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <contentType xsi:type="xsd:string"/>
+                <method xsi:type="xsd:string">GET</method>
+                <headers xsi:type="a:Variant?list"/>
+                <parameters xsi:type="a:Variant?list"/>
+                <body xsi:type="xsd:string"/>
+            </a:Dictionary>
+        </configParameters>
+        <isWrite>false</isWrite>
+        <integrationType>system.http</integrationType>
+        <connectedSystemUuid></connectedSystemUuid>
+        <isConnectedSystemConnectionOptionSelected>false</isConnectedSystemConnectionOptionSelected>
+        <integrationOutputs>
+            <a:Dictionary xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <outputs xsi:type="a:IntegrationOutput?list"/>
+            </a:Dictionary>
+        </integrationOutputs>
+    </outboundIntegration>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <typedValue>
+        <type>
+            <name>RuleTestConfig?list</name>
+            <namespace>http://www.appian.com/ae/types/2009</namespace>
+        </type>
+        <value>
+            <el>
+                <a:name/>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string"/>
+                    <a:nameRef>documentId</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:assertions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            </el>
+        </value>
+    </typedValue>
+    <history>
+        <historyInfo versionUuid="_a-0000e1cb-05fe-8000-29b4-01ef9001ef90_169391"/>
+    </history>
+</contentHaul>
