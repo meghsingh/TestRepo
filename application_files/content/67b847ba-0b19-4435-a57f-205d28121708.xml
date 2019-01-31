@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e1cb-05fe-8000-29b4-01ef9001ef90_170163</versionUuid>
+    <outboundIntegration>
+        <name>test_getChartFromGoogle</name>
+        <uuid>67b847ba-0b19-4435-a57f-205d28121708</uuid>
+        <description></description>
+        <parentUuid>_a-0000e07f-a897-8000-29b4-01ef9001ef90_55156</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition></definition>
+        <metadataExpr></metadataExpr>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <sharedConfigParameters>
+            <a:Dictionary xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <url xsi:type="xsd:string">https://image-charts.com/chart?</url>
+                <isInheritedUrlOptionSelected xsi:type="xsd:boolean">false</isInheritedUrlOptionSelected>
+                <relativePath xsi:type="xsd:string"/>
+                <authType xsi:type="xsd:string">None</authType>
+                <authDetails xsi:type="xsd:string"/>
+            </a:Dictionary>
+        </sharedConfigParameters>
+        <configParameters>
+            <a:Dictionary xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <contentType xsi:type="xsd:string"/>
+                <method xsi:type="xsd:string">GET</method>
+                <headers xsi:type="a:Variant?list"/>
+                <parameters xsi:type="a:NameValue?list">
+                    <item>
+                        <a:name>cht</a:name>
+                        <a:value xsi:type="xsd:string">p3</a:value>
+                    </item>
+                    <item>
+                        <a:name>chs</a:name>
+                        <a:value xsi:type="xsd:string">700x100</a:value>
+                    </item>
+                    <item>
+                        <a:name>chd</a:name>
+                        <a:value xsi:type="xsd:string">t:60,40</a:value>
+                    </item>
+                    <item>
+                        <a:name>chl</a:name>
+                        <a:value xsi:type="xsd:string">Hello|World</a:value>
+                    </item>
+                    <item>
+                        <a:name>chf</a:name>
+                        <a:value xsi:type="xsd:string">ps0-0,lg,45,ffeb3b,0.2,f44336,1|ps0-1,lg,45,8bc34a,0.2,009688,1</a:value>
+                    </item>
+                    <item>
+                        <a:name>chof</a:name>
+                        <a:value xsi:type="xsd:string">png</a:value>
+                    </item>
+                </parameters>
+                <body xsi:type="xsd:string"/>
+            </a:Dictionary>
+        </configParameters>
+        <isWrite>false</isWrite>
+        <integrationType>system.http</integrationType>
+        <connectedSystemUuid></connectedSystemUuid>
+        <isConnectedSystemConnectionOptionSelected>false</isConnectedSystemConnectionOptionSelected>
+        <integrationOutputs>
+            <a:Dictionary xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <outputs xsi:type="a:IntegrationOutput?list"/>
+            </a:Dictionary>
+        </integrationOutputs>
+    </outboundIntegration>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e1cb-05fe-8000-29b4-01ef9001ef90_170163"/>
+    </history>
+</contentHaul>
