@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
-    <versionUuid>_a-0000e1cb-05fe-8000-29b4-01ef9001ef90_170108</versionUuid>
+    <versionUuid>_a-0000e1cb-05fe-8000-29b4-01ef9001ef90_169286</versionUuid>
     <rule>
         <name>test_displayGrid</name>
         <uuid>_a-0000e1be-2cd8-8000-29b4-01ef9001ef90_169267</uuid>
@@ -155,9 +155,6 @@
         )*/
         
       }
-    ),
-    #"SYSTEM_SYSRULES_webContentField"(
-      source:substitute("https://image-charts.com/chart?cht=p3&amp;chs=700x100&amp;chd=t:60,40&amp;chl=Hello|World&amp;chan&amp;chf=ps0-0,lg,45,ffeb3b,0.2,f44336,1|ps0-1,lg,45,8bc34a,0.2,009688,1","|","%7C")
     )
   }
 )</definition>
@@ -193,6 +190,5 @@
     </roleMap>
     <history>
         <historyInfo versionUuid="_a-0000e1cb-05fe-8000-29b4-01ef9001ef90_169286"/>
-        <historyInfo versionUuid="_a-0000e1cb-05fe-8000-29b4-01ef9001ef90_170108"/>
     </history>
 </contentHaul>
